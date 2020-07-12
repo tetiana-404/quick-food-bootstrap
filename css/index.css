@@ -315,7 +315,7 @@ header,  #home-our-advantages, footer{
 }
 
 #home-our-advantages .row>div{
-    margin: 0px auto;
+    margin: 0px auto 20px auto;
 }
 @media (max-width: 767px){
     #home-our-advantages .cell-sm-6{
