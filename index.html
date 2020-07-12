@@ -52,7 +52,12 @@
 						</li>
 
 					</ul>
-
+					<div>
+						<a class="nav-link openCartLink" href="#modal-cart" data-toggle="modal">
+							<i class="fas fa-shopping-cart"></i>
+							<span id="cart-badge" class="badge badge-light"></span>
+						</a>
+					</div>
 				</div>
 			</nav>
 
@@ -102,7 +107,7 @@
 
 				</div>
 				<div id="home-action" class="col-12 col-md-4 animate__animated animate__zoomIn" data-toggle="modal"
-					data-target="#orderModal">
+					data-target="#modal-cart">
 					<h2>Онлайн замовлення</h2>
 					<p>Щодня 3 9:00 до 23:00</p>
 				</div>
@@ -115,74 +120,33 @@
 		<section id="ourMenu" class="container-fluid">
 			<div class="container">
 
-				<h3 class="text-center font-weight-bolder">Наше меню</h3>
-				<div class="row">
-					<div class="range  cell-sm-6 cell-md-4">
-						<div class="menu-variant-1">
-							<img class="img-responsive reveal-inline-block" src="img/pizza-6-310x260.png" alt="Піца" width="310"
+				<h3 id="products" class="text-center font-weight-bolder">Наше меню</h3>
+				<div class="row products-container">
+					<div style="display:none;">
+						<div class="range  cell-sm-6 cell-md-4">
+							<div class="menu-variant-1">
+								<img class="img-responsive reveal-inline-block" src="img/pizza-6-310x260.png" alt="Піца" width="310"
 								height="260">
-							<div class="caption">
-								<h5 class="title"><a class="link-white" href="menu-single.html">Піца</a></h5>
+								<div class="caption">
+									<h5 class="title"><a class="link-white" href="#">Піца</a></h5>
+									<p class="description">description</p>
+									<p class="price">99.99</p>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="range  cell-sm-6 cell-md-4">
-						<div class="menu-variant-1">
-							<img class="img-responsive reveal-inline-block" src="img/menu-modern-4-310x260.png" alt="Бургер"
-								width="310" height="260">
-							<div class="caption">
-								<h5 class="title"><a class="link-white" href="menu-single.html">Бургер</a></h5>
-							</div>
-						</div>
-					</div>
-					<div class="range  cell-sm-6 cell-md-4">
-						<div class="menu-variant-1">
-							<img class="img-responsive reveal-inline-block" src="img/deserts-3-310x260.png" alt="Десерти" width="310"
-								height="260">
-							<div class="caption">
-								<h5 class="title"><a class="link-white" href="menu-single.html">Десерти</a></h5>
-							</div>
-						</div>
-					</div>
-					<div class="range  cell-sm-6 cell-md-4">
-						<div class="menu-variant-1">
-							<img class="img-responsive reveal-inline-block" src="img/drinks-6-310x260.png" alt="Напої" width="310"
-								height="260">
-							<div class="caption">
-								<h5 class="title"><a class="link-white" href="menu-single.html">Напої</a></h5>
-							</div>
-						</div>
-					</div>
-					<div class="range  cell-sm-6 cell-md-4">
-						<div class="menu-variant-1">
-							<img class="img-responsive reveal-inline-block" src="img/salads-2-310x260.png" alt="Салати" width="310"
-								height="260">
-							<div class="caption">
-								<h5 class="title"><a class="link-white" href="menu-single.html">Салати</a></h5>
-							</div>
-						</div>
-					</div>
-					<div class="range  cell-sm-6 cell-md-4">
-						<div class="menu-variant-1">
-							<img class="img-responsive reveal-inline-block" src="img/toast-4-310x260.png" alt="Тости" width="310"
-								height="260">
-							<div class="caption">
-								<h5 class="title"><a class="link-white" href="menu-single.html">Тости</a></h5>
-							</div>
-						</div>
+
+
 					</div>
 				</div>
 
 			</div>
-
-
 		</section>
 		<section id="free-order" class="container-fluid">
 			<div class="container">
 				<h2>-Безкоштовна доставка-</h2>
 				<p>ДЕНЬ СЕНДВИЧА</p>
 				<p class="action-price">99.99</p>
-				<button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#orderModal">ЗАМОВИТИ</button>
+				<button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#modal-cart">ЗАМОВИТИ</button>
 
 			</div>
 		</section>
@@ -304,8 +268,6 @@
 				<form action="https://formspree.io/mjvaoyze" method="POST"></form>
 				<div class="modal-body">
 
-
-
 					<div class="form-group">
 						<label for="nameInput">Ваше ім'я</label>
 						<input type="email" class="form-control" id="nameInput" placeholder="Ваше ім'я"
@@ -325,13 +287,71 @@
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити</button>
-							<button type="submit" class="btn btn-primary">Замовити</button>
+							<button type="submit" class="btn btn-primary order">Замовити</button>
 						</div>
 						</form>
 					</div>
 				</div>
 			</div>
 
+			<!-- Modal Cart -->
+			<div class="modal fade" id="modal-cart" tabindex="-1" role="dialog" aria-labelledby="cartLabel"
+				aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="cartLabel">Корзина</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+						</div>
+						<div class="modal-body">
+							<div class="cart-product-list-container"></div>
+							<hr>
+							<div class="container">
+								<form class="form-contacts">
+									<div class="form-group row">
+										<label for="client-name" class="col-4 col-form-label">Ім'я:</label>
+										<input class="form-control col-8" type="text" id="client-name" required>
+                </div>
+										<div class="form-group row">
+											<label for="client-email" class="col-4 col-form-label">Email:</label>
+											<input class="form-control col-8" type="email" id="client-email" required>
+                </div>
+								</form>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary btn-close" data-dismiss="modal">Закрити</button>
+							<button class="btn btn-primary order">Замовити</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Modal Product Info -->
+			<div class="modal fade" id="productInfoModal" tabindex="-1" role="dialog" aria-labelledby="productInfoLabel"
+				aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="productInfoLabel">Інформація про товар</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+						</div>
+						<div class="modal-body">
+							<img class="card-img-top" src="" alt="">
+							<h4 class="card-title"></h4>
+							<p class="card-text"></p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary btn-close" data-dismiss="modal">Закрити</button>
+							<button class="btn btn-primary buy" data-id="id">Замовити</button>
+						</div>
+					</div>
+				</div>
+			</div>
 			<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 				integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
 				crossorigin="anonymous"></script>
@@ -341,6 +361,16 @@
 			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
 				integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
 				crossorigin="anonymous"></script>
+			<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"
+				integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0"
+				crossorigin="anonymous"></script>
+
+			<script async src="js/alert-window.js"></script>
+			<script defer src="js/products-service.js"></script>
+			<script defer src="js/cart.js"></script>
+			<script defer src="js/product-list.js"></script>
+			<script defer src="js/index.js"></script>
+
 </body>
 
 </html>

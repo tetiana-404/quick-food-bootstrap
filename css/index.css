@@ -14,7 +14,7 @@ body, p{
     padding: 0;
     font-family: 'Open Sans', sans-serif;
 }
-a{text-decoration: none;}
+a, a:hover{text-decoration: none;}
 
 header, .content, #home-menu{
     max-width: 1024px;
@@ -231,11 +231,11 @@ header,  #home-our-advantages, footer{
     padding-bottom: 74px;
 }
 .range .caption{
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    bottom: -20px;
     left: 0;
     right: 0;
-    height: 77px;
+    height: 170px;
     z-index: 1;
     text-align: left;
     border-radius: 0 0 6px 6px;
@@ -264,22 +264,56 @@ header,  #home-our-advantages, footer{
 }
 
 .range .caption .title {
-    position: absolute;
-    left: 40px;
-    top: 50%;
+    color: #fff;
+    font-weight: 800;
+    position: relative;
+    left: 0px;
+    top: 10%;
     -webkit-transform: translate(0, -50%);
     transform: translate(0, -50%);
     transition: 450ms ease-in-out;
 }
-.range:hover .caption .title {
-	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-}
+
 .range .caption .title a{
     color: #fff;
     font-weight: 800;
 }
+.range .caption .description {
+    color: #fff;
+    position: relative;
+    left: 0px;
+    top: 25%;
+    line-height: 1em;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    transition: 450ms ease-in-out;
+}
+.range .caption .price {
+    color:#fec63d;
+    font-weight: 800;
+    position: relative;
+    left: 20px;
+    top: -25%;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    transition: 450ms ease-in-out;
+}
+.range .caption .card-buttons{
+    left: 20px;
+    bottom: 0%;
+    position: absolute;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    transition: 450ms ease-in-out;
+}
+.range:hover .caption .title,
+.range:hover .caption .description,
+.range:hover .caption .price {
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
 #home-our-advantages .row>div{
     margin: 0px auto;
 }
