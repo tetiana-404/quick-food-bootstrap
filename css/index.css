@@ -175,6 +175,8 @@ header,  #home-our-advantages, footer{
 
 #free-order{
     background: url(../img/parallax-06.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     min-height: 400px;
@@ -184,36 +186,42 @@ header,  #home-our-advantages, footer{
     text-align: center;
 }
 #free-order h2{
-    font-size: 2em;
-    font-weight: 800;
-    font-style: italic;
-    margin-top: 25px;
-}
-#free-order p{
     font-size: 4em;
     font-weight: 800;
+    margin-top: 45px;
+}
+#free-order p{
+    font-size: 1em;
+    font-weight: 800;
     font-style: italic;
+    margin: 35px auto;
 }
 #free-order .action-price{
     color:var(--yellow-color);
-    font-size: 5em;
+    font-size: 4em;
     font-weight: 800;
     font-style: italic;
 }
 @media (max-width: 768px){
     #free-order h2{
-        font-size: 1em;
-    }
-    #free-order p{
         font-size: 2em;
     }
+    #free-order p{
+        font-size: 0.8em;
+        
+    }
     #free-order .action-price{
-        font-size: 3em;
+        font-size: 2em;
+        
     }
 }
-#ourMenu{
+#ourMenu,
+#home-catering{
     background-color: #f2f3f8;
     padding: 25px 0;
+}
+#home-order-catering{
+margin: 35px 0;    
 }
 #ourMenu h3{
     font-size: 42px;
@@ -355,4 +363,39 @@ footer .row{
     width: 100%;
     flex-wrap: nowrap;
     justify-content: space-between;
+}
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #ff5d55;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #ff5d55;
+  cursor: pointer;
 }

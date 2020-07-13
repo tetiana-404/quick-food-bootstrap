@@ -135,88 +135,85 @@
 		</section>
 		<section id="free-order" class="container-fluid">
 			<div class="container">
-				<h2>-Безкоштовна доставка-</h2>
-				<p>ДЕНЬ СЕНДВИЧА</p>
-				<p class="action-price">99.99</p>
-				<button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#orderModal">ЗАМОВИТИ</button>
+				<h2>Безкоштовна доставка</h2>
+				<p>будь-якого замовлення, більше 100 грн.</p>
+				<p class="action-price"></p>
 
 			</div>
 		</section>
 
-		<section id="home-our-advantages" class="container">
-			<div class="row">
-				<div class="cell-sm-6 cell-md-3 animate__animated animate__fadeInUp text-center">
-					<img src=" img/clock.svg" alt="Швидка доставка" style="height:75px;">
-					<h3>Швидка доставка</h3>
-					<hr>
-					<p>Усе, що Ви замовите, буде швидко доставлено до Вашого дому</p>
-				</div>
-				<div class="cell-sm-6 cell-md-3 animate__animated animate__fadeInUp text-center">
-					<img src="img/pizza-icon.png" alt="Смачна їжа" style="height:75px;">
-					<h3>Смачна їжа</h3>
-					<hr>
-					<p>Ми використовуємо<br>
+		<section id="home-our-advantages" class="container-fluid">
+			<div class="container">
+				<div class="row">
+					<div class="cell-sm-6 cell-md-3 animate__animated animate__fadeInUp text-center">
+						<img src=" img/clock.svg" alt="Швидка доставка" style="height:75px;">
+						<h3>Швидка доставка</h3>
+						<hr>
+						<p>Усе, що Ви замовите, буде швидко доставлено до Вашого дому</p>
+					</div>
+					<div class="cell-sm-6 cell-md-3 animate__animated animate__fadeInUp text-center">
+						<img src="img/pizza-icon.png" alt="Смачна їжа" style="height:75px;">
+						<h3>Смачна їжа</h3>
+						<hr>
+						<p>Ми використовуємо<br>
 						лише свіжі та натуральні продукти</p>
-				</div>
-				<div class="cell-sm-6 cell-md-3 animate__animated animate__fadeInUp text-center">
-					<img src="img/graduation-cap.png" alt="Досвідчені кухарі" style="height:75px;">
-					<h3>Досвідчені кухарі</h3>
-					<hr>
-					<p>Наш персонал - це<br>
+					</div>
+					<div class="cell-sm-6 cell-md-3 animate__animated animate__fadeInUp text-center">
+						<img src="img/graduation-cap.png" alt="Досвідчені кухарі" style="height:75px;">
+						<h3>Досвідчені кухарі</h3>
+						<hr>
+						<p>Наш персонал - це<br>
 						кухарі з великим досвідом роботи</p>
-				</div>
-				<div class="cell-sm-6 cell-md-3 animate__animated animate__fadeInUp text-center">
-					<img src="img/menu-icon.svg" alt="Різноманітне меню" style="height:75px;">
-					<h3>Різноманітне меню</h3>
-					<hr>
-					<p>В нас Ви знайдете<br>
+					</div>
+					<div class="cell-sm-6 cell-md-3 animate__animated animate__fadeInUp text-center">
+						<img src="img/menu-icon.svg" alt="Різноманітне меню" style="height:75px;">
+						<h3>Різноманітне меню</h3>
+						<hr>
+						<p>В нас Ви знайдете<br>
 						вибір страв, напоїв та десертів</p>
+					</div>
 				</div>
 			</div>
 		</section>
 
-		<section id="home-catering" style="display: none;">
-			<h3>У нас можна замовити</h3>
-			<h1>КЕЙТЕРІНГ</h1>
+		<section id="home-catering" class="container-fluid">
+			<div class="container d-flex flex-column justify-content-center">
+				<h3 class="text-center">У нас можна порахувати приблизну вартість та замовити</h3>
+				<h1 class="text-center">КЕЙТЕРІНГ</h1>
+			</div>
 		</section>
 
-		<section id=" home-order-catering" style="display: none;">
-			<h2>Замовити кейтерінг:</h2>
-			<form action="https://formspree.io/mjvaoyze" method="POST">
-				<label><input type="text" id="firstname" name="firstname" placeholder="Ваше ім'я" required></label>
-				<label><input type="tel" id="phone" name="phone" placeholder="Ваше телефн" required pattern="[0-9]{10}"></label>
-				<select name="number-of-persons">
-					<option value="" disabled selected>Кількість осіб</option>
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-					<option value="6">6</option>
-					<option value="7">7</option>
-					<option value="8">8</option>
-					<option value="9">9</option>
-					<option value="10">10</option>
-					<option value="11">11</option>
-					<option value="12">12</option>
-					<option value="13">13</option>
-					<option value="14">14</option>
-					<option value="15">15</option>
-					<option value="16">16</option>
-					<option value="17">17</option>
-					<option value="18">18</option>
-					<option value="19">19</option>
-					<option value="20">20</option>
-				</select>
-				<label><input type="date" id="birthday" name="birthday"></label>
-				<select name="event">
-					<option value="" disabled selected>Подія</option>
-					<option value="hb">День народження</option>
-					<option value="wd">Весілля</option>
-					<option value="an">Ювілей</option>
-				</select>
-				<button type="submit">Submit</button>
-			</form>
+		<section id="home-order-catering" class="container-fluid">
+			<div class="container">
+				<h2 class="text-center">Порахувати приблизну вартість:</h2><br><br>
+				
+					<div class="row align-self-center">
+						<div class="col-12 col-md-4">
+							<div class="slidecontainer ">
+								<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+								<p class="d-flex justify-content-center"><span id="demo"></span></p>
+							</div>
+						</div>
+						<div class="col-12 col-md-4 d-flex justify-content-center">
+							<input type="date" id="birthday" name="birthday" style="width:99%;">
+                </div>
+							<select id="cateringEvent" name="event" class="col-12 col-md-4">
+												
+												<option >День народження</option>
+												<option >Весілля</option>
+												<option >Ювілей</option>
+											</select>
+						</div>
+						<div class="row" style="margin-top:25px;">
+							<div class="col-12 d-flex justify-content-center">
+								<button type="submit" id="catering-calc" class="btn btn-danger" >Порахувати</button>&nbsp;&nbsp;
+                                <button type="submit" id="catering-calc"  data-toggle="modal"
+                          data-target="#orderModal"  class="btn btn-danger" >Замовити</button>
+							</div>
+						</div>
+				
+                <p class="display"></p>
+			</div>
 		</section>
 
 		<div id="home-map" class="container-fluid px-0 mt-10">
@@ -240,8 +237,8 @@
 					<img src="img/facebook.svg" alt="Follow us on facebook" style="width:25px;">
 					<img src="img/instagram.svg" alt="Follow us on instagram" style="width:25px;">
 				</div>
+				</div>
 			</div>
-		</div>
 	</footer>
 
 	<!-- Modal -->
