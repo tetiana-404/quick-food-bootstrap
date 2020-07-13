@@ -34,7 +34,7 @@ var output = document.getElementById("demo");
 output.innerHTML = slider.value; // Display the default slider value
 
 
-const countOfPerson = slider.value;
+let countOfPerson = slider.value;
 const display = document.querySelector('.display');
 let cateringEvent = document.getElementById('cateringEvent').index;
 let a = document.getElementById("cateringEvent").selectedIndex;
@@ -46,14 +46,14 @@ document.querySelector("#cateringEvent").addEventListener('change', eventChange)
 
 function cateringCalc() {
     if (y[a].index == 0) {
-        display.innerHTML = countOfPerson*500; 
+        display.innerHTML = countOfPerson*500 + " грн."; 
     } else 
     if (y[a].index == 1) {
-        display.innerHTML = countOfPerson*1500; 
+        display.innerHTML = countOfPerson*1500 + " грн."; 
     } else {
-        display.innerHTML = countOfPerson*750; 
+        display.innerHTML = countOfPerson*750 + " грн."; 
     }
-   
+   document.querySelector(".calc-show").style.display = "block";
 }
 
 function eventChange() {
@@ -65,4 +65,14 @@ function eventChange() {
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
   output.innerHTML = this.value;
+  countOfPerson = this.value;
+}
+
+document.querySelector("#catering-order").addEventListener('click', cateringOrder);
+const displayCatering = document.querySelector('#orderCateringModal .catering-info');
+const dateCatering = document.querySelector("#birthday"); 
+function cateringOrder() {
+    displayCatering.innerHTML = `Ви зробили замовлення на послуги кейтерингу на ${countOfPerson} осіб, 
+                                ${dateCatering.value}, подія: ${y[a].value}`;
+
 }

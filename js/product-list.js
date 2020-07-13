@@ -18,7 +18,7 @@ class ProductList {
                         alt="${product.title}" height="260">
                     <div class="card-body d-flex flex-column caption">
                       <h4 class="title">${product.title}</h4>
-                      <p class="card-text flex-fill description">${product.description}</p>
+                      <p class="card-text description">${product.description}</p>
                       <p class="price">${product.price} грн.</p>
                       <div class="d-flex justify-content-around card-buttons">
                         <button class="btn btn-info" data-toggle="modal"

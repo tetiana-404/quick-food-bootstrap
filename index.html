@@ -99,7 +99,7 @@
 		<section id="home-menu" class="container">
 			<div class="row w-100">
 				<div id="main-menu" class="col-12 col-md-4 animate__animated animate__zoomIn">
-					<h2><a href="#">Основне меню</a></h2>
+					<h2><a href="#ourMenu">Основне меню</a></h2>
 					<p>Бургер / Піца / Салати / Напої</p>
 				</div>
 				<div id="home-action" class="col-12 col-md-4 animate__animated animate__zoomIn" data-toggle="modal"
@@ -108,7 +108,7 @@
 					<p>Щодня 3 9:00 до 23:00</p>
 				</div>
 				<div id="home-price" class="col-12 col-md-4 animate__animated animate__zoomIn">
-					<h2>Спеціальні ціни</h2>
+					<h2><a href="#free-order">Спеціальні ціни</a></h2>
 					<p>Кожного дня від 59 грн.</p>
 				</div>
 			</div>
@@ -186,34 +186,42 @@
 		<section id="home-order-catering" class="container-fluid">
 			<div class="container">
 				<h2 class="text-center">Порахувати приблизну вартість:</h2><br><br>
-				
-					<div class="row align-self-center">
-						<div class="col-12 col-md-4">
-							<div class="slidecontainer ">
-								<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-								<p class="d-flex justify-content-center"><span id="demo"></span></p>
-							</div>
+
+				<div class="row align-self-center">
+					<div class="col-12 col-md-4">
+						<div class="slidecontainer ">
+							<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+							<p class="d-flex justify-content-center"><span id="demo"></span></p>
 						</div>
-						<div class="col-12 col-md-4 d-flex justify-content-center">
-							<input type="date" id="birthday" name="birthday" style="width:99%;">
+					</div>
+					<div class="col-12 col-md-4 d-flex justify-content-center">
+						<input type="date" id="birthday" name="birthday" style="width:99%;">
                 </div>
-							<select id="cateringEvent" name="event" class="col-12 col-md-4">
-												
+						<select id="cateringEvent" name="event" class="col-12 col-md-4">
 												<option >День народження</option>
 												<option >Весілля</option>
 												<option >Ювілей</option>
 											</select>
+					</div>
+					<div class="row" style="margin-top:25px;">
+						<div class="col-12 d-flex justify-content-center">
+							<button type="submit" id="catering-calc" class="btn btn-primary" >Порахувати</button>&nbsp;&nbsp;
+
 						</div>
+					</div>
+					<div class="calc-show animate__animated animate__fadeInUp" style="display:none;">
 						<div class="row" style="margin-top:25px;">
+							<p class="display"></p>
+
+						</div>
+						<div class="row " style="margin-top:25px;">
 							<div class="col-12 d-flex justify-content-center">
-								<button type="submit" id="catering-calc" class="btn btn-danger" >Порахувати</button>&nbsp;&nbsp;
-                                <button type="submit" id="catering-calc"  data-toggle="modal"
-                          data-target="#orderModal"  class="btn btn-danger" >Замовити</button>
+								<button type="submit" id="catering-order"  data-toggle="modal"
+                          data-target="#orderCateringModal"  class="btn btn-primary" >Замовити</button>
 							</div>
 						</div>
-				
-                <p class="display"></p>
-			</div>
+					</div>
+				</div>
 		</section>
 
 		<div id="home-map" class="container-fluid px-0 mt-10">
@@ -223,10 +231,9 @@
 				height="450" style="border:0; width:100%" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 		</div>
 	</main>
-	<footer class="container-fluid px-0">
-		<div clas="container w-100">
+	<footer class="container-fluid">
+		<div class="container">
 			<div class="row">
-
 				<div class="col-6">
 					© QuickFood - ресторан швидкої їжі, послуги кейтирингу, 2020
 				</div>
@@ -234,11 +241,11 @@
 					м.Львів, пл.Ринок, 7
 				</div>
 				<div class="col-3">
-					<img src="img/facebook.svg" alt="Follow us on facebook" style="width:25px;">
-					<img src="img/instagram.svg" alt="Follow us on instagram" style="width:25px;">
-				</div>
+					<img src="img/facebook.svg" alt="Follow us on facebook" style="width:25px; color:#fff;">
+					<img src="img/instagram.svg" alt="Follow us on instagram" style="width:25px; color:#fff;">
 				</div>
 			</div>
+		</div>
 	</footer>
 
 	<!-- Modal -->
@@ -252,112 +259,151 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form action="https://formspree.io/mjvaoyze" method="POST"></form>
-				<div class="modal-body">
+				<form action="https://formspree.io/mjvaoyze" method="POST">
+					<div class="modal-body">
 
-					<div class="form-group">
-						<label for="nameInput">Ваше ім'я</label>
-						<input type="email" class="form-control" id="nameInput" placeholder="Ваше ім'я"
+						<div class="form-group">
+							<label for="nameInput">Ваше ім'я</label>
+							<input type="text" class="form-control" id="nameInput" required placeholder="Ваше ім'я"
+							aria-describedby="nameInput">
+					    </div>
+							<div class="form-group">
+								<label for="phoneInput">Телефон</label>
+								<input type="text" class="form-control" placeholder="Телефон" required id="phoneInput">
+					    </div>
+								<div class="form-group">
+									<label for="messageTextareas">Повідомлення</label>
+
+									<textarea name="message" class="form-control" id="messageTextareas"></textarea>
+
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити</button>
+								<button type="submit" class="btn btn-primary order">Замовити</button>
+							</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal CateringOrder -->
+	<div class="modal fade" id="orderCateringModal" tabindex="-1" role="dialog"
+		aria-labelledby="orderCateringModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="orderCateringModalLabel">Зробити замовлення</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form action="https://formspree.io/mjvaoyze" method="POST">
+					<div class="modal-body">
+						<div class="catering-info"></div>
+						<hr>
+						<div class="form-group">
+							<label for="nameInput">Ваше ім'я</label>
+							<input type="text" class="form-control" id="nameInput" required placeholder="Ваше ім'я"
 							aria-describedby="nameInput">
 					</div>
-						<div class="form-group">
-							<label for="phoneInput">Телефон</label>
-							<input type="text" class="form-control" placeholder="Телефон" id="phoneInput">
-					</div>
 							<div class="form-group">
-								<label for="messageTextareas">
+								<label for="phoneInput">Телефон</label>
+								<input type="text" class="form-control" placeholder="Телефон" required id="phoneInput">
+												</div>
+								<div class="form-group">
+									<label for="messageTextareas">
 							Повідомлення</label>
 
-								<textarea name="message" class="form-control" id="messageTextareas"></textarea>
+									<textarea name="message" class="form-control" id="messageTextareas"></textarea>
 
+								</div>
 							</div>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити</button>
-							<button type="submit" class="btn btn-primary order">Замовити</button>
-						</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити</button>
+								<button type="submit" class="btn btn-primary order">Замовити</button>
+							</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal Cart -->
+	<div class="modal fade" id="modal-cart" tabindex="-1" role="dialog" aria-labelledby="cartLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="cartLabel">Корзина</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+				</div>
+				<div class="modal-body">
+					<div class="cart-product-list-container"></div>
+					<hr>
+					<div class="container">
+						<form class="form-contacts">
+							<div class="form-group row">
+								<label for="client-name" class="col-4 col-form-label">Ім'я:</label>
+								<input class="form-control col-8" type="text" id="client-name" required>
+                </div>
+								<div class="form-group row">
+									<label for="client-email" class="col-4 col-form-label">Email:</label>
+									<input class="form-control col-8" type="email" id="client-email" required>
+                </div>
 						</form>
 					</div>
 				</div>
-			</div>
-
-			<!-- Modal Cart -->
-			<div class="modal fade" id="modal-cart" tabindex="-1" role="dialog" aria-labelledby="cartLabel"
-				aria-hidden="true">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="cartLabel">Корзина</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-						</div>
-						<div class="modal-body">
-							<div class="cart-product-list-container"></div>
-							<hr>
-							<div class="container">
-								<form class="form-contacts">
-									<div class="form-group row">
-										<label for="client-name" class="col-4 col-form-label">Ім'я:</label>
-										<input class="form-control col-8" type="text" id="client-name" required>
-                </div>
-										<div class="form-group row">
-											<label for="client-email" class="col-4 col-form-label">Email:</label>
-											<input class="form-control col-8" type="email" id="client-email" required>
-                </div>
-								</form>
-							</div>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary btn-close" data-dismiss="modal">Закрити</button>
-							<button class="btn btn-primary order">Замовити</button>
-						</div>
-					</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary btn-close" data-dismiss="modal">Закрити</button>
+					<button class="btn btn-primary order">Замовити</button>
 				</div>
 			</div>
+		</div>
+	</div>
 
-			<!-- Modal Product Info -->
-			<div class="modal fade" id="productInfoModal" tabindex="-1" role="dialog" aria-labelledby="productInfoLabel"
-				aria-hidden="true">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="productInfoLabel">Інформація про товар</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	<!-- Modal Product Info -->
+	<div class="modal fade" id="productInfoModal" tabindex="-1" role="dialog" aria-labelledby="productInfoLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="productInfoLabel">Інформація про товар</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-						</div>
-						<div class="modal-body">
-							<img class="card-img-top" src="" alt="">
-							<h4 class="card-title"></h4>
-							<p class="card-text"></p>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary btn-close" data-dismiss="modal">Закрити</button>
-							<button class="btn btn-primary buy" data-id="id">Замовити</button>
-						</div>
-					</div>
+				</div>
+				<div class="modal-body">
+					<img class="card-img-top" src="" alt="">
+					<h4 class="card-title"></h4>
+					<p class="card-text"></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary btn-close" data-dismiss="modal">Закрити</button>
+					<button class="btn btn-primary buy" data-id="id">Замовити</button>
 				</div>
 			</div>
-			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-				integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-				crossorigin="anonymous"></script>
-			<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-				integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-				crossorigin="anonymous"></script>
-			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-				integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-				crossorigin="anonymous"></script>
-			<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"
-				integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0"
-				crossorigin="anonymous"></script>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+	</script>
+	<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"
+		integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous">
+	</script>
 
-			<!--<script async src="js/alert-window.js"></script>-->
-			<script async src="js/showAlert.js"></script>
-			<script defer src="js/products-service.js"></script>
-			<script defer src="js/cart.js"></script>
-			<script defer src="js/product-list.js"></script>
-			<script defer src="js/index.js"></script>
+	<!--<script async src="js/alert-window.js"></script>-->
+	<script async src="js/showAlert.js"></script>
+	<script defer src="js/products-service.js"></script>
+	<script defer src="js/cart.js"></script>
+	<script defer src="js/product-list.js"></script>
+	<script defer src="js/index.js"></script>
 
 </body>
 

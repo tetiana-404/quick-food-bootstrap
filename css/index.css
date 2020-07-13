@@ -243,7 +243,6 @@ margin: 35px 0;
     bottom: -20px;
     left: 0;
     right: 0;
-    height: 170px;
     z-index: 1;
     text-align: left;
     border-radius: 0 0 6px 6px;
@@ -276,7 +275,7 @@ margin: 35px 0;
     font-weight: 800;
     position: relative;
     left: 0px;
-    top: 10%;
+    margin-top: 25px;
     -webkit-transform: translate(0, -50%);
     transform: translate(0, -50%);
     transition: 450ms ease-in-out;
@@ -290,7 +289,7 @@ margin: 35px 0;
     color: #fff;
     position: relative;
     left: 0px;
-    top: 25%;
+    top: 15%;
     line-height: 1em;
     -webkit-transform: translate(0, -50%);
     transform: translate(0, -50%);
@@ -300,16 +299,15 @@ margin: 35px 0;
     color:#fec63d;
     font-weight: 800;
     position: relative;
-    left: 20px;
-    top: -25%;
+    left: 0px;
+    top: 15%;
     -webkit-transform: translate(0, -50%);
     transform: translate(0, -50%);
     transition: 450ms ease-in-out;
 }
 .range .caption .card-buttons{
-    left: 20px;
-    bottom: 0%;
-    position: absolute;
+    left: 0px;
+    margin-top: 25px;
     -webkit-transform: translate(0, -50%);
     transform: translate(0, -50%);
     transition: 450ms ease-in-out;
@@ -398,4 +396,63 @@ footer .row{
   height: 25px;
   background: #ff5d55;
   cursor: pointer;
+}
+.calc-show .display{
+    font-size: 4em;
+    color: #ff5d55;
+}
+
+.btn-primary{
+
+background-color: #fec63d;
+border:0px;
+border-radius: 45%;
+padding: 15px;
+margin: 10px;
+text-transform: uppercase;
+font-weight: 700;
+}
+
+.btn-info{
+background-color: #fff;
+border:0px;
+border-radius: 45%;
+color: #ff5d55;
+padding: 15px;
+margin: 10px;
+text-transform: uppercase;
+font-weight: 700;
+}
+.btn-primary:hover,
+.btn-info:hover,
+.btn-primary:active,
+.btn-info:active,
+.btn-primary:focus,
+.btn-info:focus
+{
+    background-color: #23201e;
+    border:0px;
+}
+.btn-secondary{
+    border-radius: 45%;
+    padding: 15px;
+    margin: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+@media (max-width: 991px){
+    .btn{
+        font-size: 0.5rem;
+    }
+}
+
+.catering-info{
+    text-align: center;
+    font-weight: 800;
+}
+footer{
+    padding: 15px 0px;
+}
+a.openCartLink{
+    color: #23201e;
 }

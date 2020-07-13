@@ -40,7 +40,7 @@ class Cart {
     cartDomSting += `
                 <div class="row">
                     <div class="col-5"><strong>Всього</strong></div>
-                    <div class="col-3"><strong>$${total}</strong></div>
+                    <div class="col-3"><strong>${total} грн.</strong></div>
                 </div>            
         </div>`;
     this.cartContainer.querySelector(
